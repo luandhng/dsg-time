@@ -27,7 +27,7 @@ import localFont from "next/font/local";
 //   ],
 // });
 
-const myFont = localFont({ src: "Font/CarbonBold.woff2" });
+const myFont = localFont({ src: "Font/Satoshi-Variable.woff2" });
 
 export const metadata: Metadata = {
   title: "DSG",

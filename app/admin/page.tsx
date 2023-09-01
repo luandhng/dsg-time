@@ -3,10 +3,15 @@ import Week from "@/components/staff/Week";
 
 const Admin = () => {
   return (
-    <div className="max-w-5xl py-1 space-y-1 m-auto h-screen">
+    <div className="max-w-5xl font-medium py-1 space-y-1 m-auto h-screen">
       {/* Date */}
-      <div className="bg-[#855ae1] text-center py-5 text-black text-xl rounded-xl">
-        08/27/23 - 09/10/23
+      <div className="grid grid-cols-6 gap-1">
+        <div className="bg-[#855ae1] col-span-5 text-center py-3 text-black text-xl rounded-xl">
+          08/27/23 - 09/10/23
+        </div>
+        <div className="flex text-[#855ae1] duration-500 cursor-pointer hover:bg-[#855ae1] hover:text-black justify-center items-center bg-[#1d1d1d] rounded-xl">
+          ADD STAFF
+        </div>
       </div>
 
       {/* Staffs */}
@@ -21,12 +26,12 @@ const Admin = () => {
 
       {/* Main Points */}
       <div className="grid grid-cols-2 gap-1">
-        <div className="flex flex-col gap-52 bg-[#8f9b9d] text-black rounded-xl p-5 text-5xl">
-          <div>MIGUE</div>
+        <div className="flex flex-col justify-between bg-[#8f9b9d] text-black rounded-xl p-5 text-5xl">
+          <div>Migue</div>
           <div className="">80H</div>
         </div>
-        <div className="flex flex-col gap-1 text-4xl text-black">
-          <div className="flex items-center flex-1 rounded-xl p-6 bg-green-500">
+        <div className="flex flex-col gap-1 text-3xl text-black">
+          <div className="flex items-center flex-1 rounded-xl p-6 bg-[#5dbe74]">
             $960
           </div>
           <div className="flex justify-between items-center flex-1 rounded-xl p-6 bg-[#e1d35a]">
@@ -61,12 +66,12 @@ const Admin = () => {
 
       {/* Weeks */}
       <div className="grid gap-1 grid-cols-3">
-        <Week date={"MON"} />
-        <Week date={"TUE"} />
-        <Week date={"WED"} />
-        <Week date={"THU"} />
-        <Week date={"FRI"} />
-        <Week date={"SAT"} />
+        <Week date={"Mon"} />
+        <Week date={"Tue"} />
+        <Week date={"Wed"} />
+        <Week date={"Thu"} />
+        <Week date={"Fri"} />
+        <Week date={"Sat"} />
 
         <Week date={"MON"} />
         <Week date={"TUE"} />

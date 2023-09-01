@@ -12,8 +12,10 @@ const Box = ({ name }: BoxModel) => {
   return (
     <div
       onClick={() => setCheckIn((prev) => !prev)}
-      className={`flex ${
-        checkIn ? `bg-blue-700` : `bg-[#1d1d1d]`
+      className={`flex flex-col gap-2 ${
+        checkIn ? `bg-[#5dbe74]` : `bg-[#1d1d1d]`
+      } ${
+        checkIn ? `text-black` : `text-white`
       } cursor-pointer select-none rounded-xl justify-center items-center border border-neutral-800 font-medium text-8xl text-center`}
     >
       {name}
