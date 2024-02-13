@@ -13,6 +13,7 @@
   - [Route Group](./next_js_route_group.md)
   - [Metadata](./next_js_metadata.md)
   - [Dynamic Routes](./next_js_dynamic_routes.md)
+  - [Server Fetching](./next_js_server_fetching.md)
   - [404](./next_js_404.md)
   - [Hooks](./next_js_hooks.md)
 
