@@ -1,9 +1,11 @@
-export default function Home() {
+export default async function Home() {
   return (
-    <main className="text-red-600">
-      <h1>Love is here</h1>
-      <p>YOu are coool</p>
-      <p>You are cooler</p>
+    <main className="h-full flex items-center justify-center">
+      <form action="" className="flex flex-col gap-1">
+        <input type="email" />
+        <input type="password" />
+        <input type="submit" />
+      </form>
     </main>
   );
 }
