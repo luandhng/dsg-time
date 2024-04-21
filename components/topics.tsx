@@ -31,7 +31,7 @@ export const Topics = ({ notes }: TopicsProps) => {
       </button>
 
       <button
-        onClick={async () => {
+        onClick={() => {
           addData({ this_topic: uuid, topic: "", note: "" });
           setSelectedTopic(uuid);
           addTopicServer(uuid);
