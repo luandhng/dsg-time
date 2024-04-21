@@ -4,7 +4,10 @@ import { createClient } from "@/utils/supabase/server";
 
 const Write = async () => {
   const supabase = createClient();
-  let { data: notes } = await supabase.from("notes").select("*");
+  let { data: notes } = await supabase
+    .from("notes")
+    .select("*")
+    .order("created_at", { ascending: false });
 
   return (
     <main className="h-full grid grid-cols-12">

@@ -7,19 +7,44 @@ interface TopicsProps {
 }
 
 export const Topics = ({ data }: TopicsProps) => {
-  const { setSelectedTopic } = useSelectedTopicStore();
+  const { selectedTopic, setSelectedTopic } = useSelectedTopicStore();
 
   return (
     <div className="col-span-2 border-r border-neutral-400">
-      {data?.map((item: any, index: number) => (
-        <div
-          onClick={() => setSelectedTopic(item.topic)}
-          key={index}
-          className="border-b border-neutral-400 hover:bg-neutral-200 p-3"
-        >
-          {item.topic}
-        </div>
-      ))}
+      <button className="p-3 border-b bg-neutral-200 font-semibold border-neutral-400 w-full">
+        Add a topic
+      </button>
+      <div>
+        {data?.map((item: any, index: number) => (
+          <div
+            onClick={() => setSelectedTopic(item.topic)}
+            key={index}
+            className={`${
+              selectedTopic === item.topic && "bg-neutral-200"
+            } border-b flex items-center justify-between border-neutral-400 hover:bg-neutral-200 p-3`}
+          >
+            <p>{item.topic}</p>
+
+            <button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M3 6h18" />
+                <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" />
+                <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" />
+              </svg>
+            </button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
