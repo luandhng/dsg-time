@@ -1,17 +1,27 @@
 "use client";
 
+import { useNotesDataStore } from "@/stores/notesDataStore";
 import { useSelectedTopicStore } from "@/stores/selectedTopicStore";
+import { useEffect } from "react";
 
 interface TopicsProps {
-  data: any;
+  notes: any;
 }
 
-export const Topics = ({ data }: TopicsProps) => {
+export const Topics = ({ notes }: TopicsProps) => {
   const { selectedTopic, setSelectedTopic } = useSelectedTopicStore();
+  const { data, setData, addData } = useNotesDataStore();
+
+  useEffect(() => {
+    setData(notes);
+  }, []);
 
   return (
     <div className="col-span-2 border-r border-neutral-400">
-      <button className="p-3 border-b bg-neutral-200 font-semibold border-neutral-400 w-full">
+      <button
+        onClick={() => addData({ topic: "", notes: "" })}
+        className="p-3 border-b bg-neutral-200 font-semibold border-neutral-400 w-full"
+      >
         Add a topic
       </button>
       <div>

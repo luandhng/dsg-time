@@ -1,13 +1,11 @@
 "use client";
 
+import { useNotesDataStore } from "@/stores/notesDataStore";
 import { useSelectedTopicStore } from "@/stores/selectedTopicStore";
 
-interface NotesProps {
-  data: any;
-}
-
-export const Notes = ({ data }: NotesProps) => {
-  const { selectedTopic } = useSelectedTopicStore();
+export const Notes = () => {
+  const { selectedTopic, setSelectedTopic } = useSelectedTopicStore();
+  const { data } = useNotesDataStore();
 
   return (
     <div className="col-span-10">
@@ -16,6 +14,7 @@ export const Notes = ({ data }: NotesProps) => {
           item.topic === selectedTopic && (
             <div key={index} className="">
               <input
+                onChange={(e) => {}}
                 defaultValue={item.topic}
                 className=" p-3 border-b w-full border-neutral-400 font-semibold"
               ></input>

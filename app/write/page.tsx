@@ -11,8 +11,8 @@ const Write = async () => {
 
   return (
     <main className="h-full grid grid-cols-12">
-      <Topics data={notes} />
-      <Notes data={notes} />
+      <Topics notes={notes} />
+      <Notes />
     </main>
   );
 };
