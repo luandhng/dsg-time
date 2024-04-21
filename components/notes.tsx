@@ -40,6 +40,7 @@ export const Notes = () => {
                 }}
                 className="p-3 flex-1 h-full focus:outline-none"
                 defaultValue={item.note}
+                value={item.note}
               ></textarea>
             </div>
           )
