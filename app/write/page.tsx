@@ -5,12 +5,28 @@ const Write = async () => {
   let { data: notes } = await supabase.from("notes").select("*");
 
   return (
-    <main className="">
-      {notes?.map((note, index) => (
-        <div key={index} className="">
-          <div className="">{note.topic}</div>
-        </div>
-      ))}
+    <main className="h-full grid grid-cols-12">
+      <div className="col-span-2 border-r border-neutral-400">
+        {notes?.map((item, index) => (
+          <div
+            key={index}
+            className="border-b border-neutral-400 hover:bg-neutral-200 p-3"
+          >
+            {item.topic}
+          </div>
+        ))}
+      </div>
+
+      <div className="col-span-10">
+        {notes?.map(
+          (item, index) =>
+            item.topic === "become founder" && (
+              <div key={index} className="p-3">
+                {item.note}
+              </div>
+            )
+        )}
+      </div>
     </main>
   );
 };
