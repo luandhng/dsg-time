@@ -21,12 +21,17 @@ export const Topics = ({ notes }: TopicsProps) => {
     setData(notes);
   }, []);
 
+  console.log("im doing my homework");
+  console.log(
+    "this is homework im wokring on rightnow, which is very juicesheeee"
+  );
+
   return (
-    <div className="col-span-2 border-r bg-white border-neutral-400">
+    <div className="col-span-2 border-r bg-neutral-100 border-neutral-400">
       {/* For Mobile */}
       <button
         onClick={() => setShowTopics(!showTopics)}
-        className="lg:hidden p-2 bg-black text-white flex justify-center w-full border-b"
+        className="lg:hidden p-2 text-blue-600 bg-blue-50 flex justify-center w-full border-b border-neutral-400"
       >
         Topics
       </button>
@@ -51,7 +56,9 @@ export const Topics = ({ notes }: TopicsProps) => {
               setShowTopics(false);
             }}
             key={index}
-            className={`${selectedTopic === item.topic && "bg-neutral-200"} ${
+            className={`${
+              selectedTopic === item.this_topic && "font-semibold"
+            } ${
               !showTopics && "max-lg:hidden"
             } border-b cursor-pointer select-none flex items-center justify-between border-neutral-400 hover:bg-neutral-200 p-3`}
           >
