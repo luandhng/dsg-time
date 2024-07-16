@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { Text, View } from "react-native";
 
 export default function App() {
   return (
@@ -7,6 +7,9 @@ export default function App() {
       <Text className="text-xl text-white font-medium">
         Please arrive at the location
       </Text>
+
+      {/* <Workers /> */}
+
       <StatusBar style="auto" />
     </View>
   );
