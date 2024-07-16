@@ -17,8 +17,6 @@ export default function App() {
   TaskManager.defineTask(
     "TrackingYou",
     ({ data: { eventType, region }, error }) => {
-      console.log(eventType);
-      console.log(region);
       if (eventType === GeofencingEventType.Enter) {
         console.log("You've entered region:", region);
       } else if (eventType === GeofencingEventType.Exit) {
