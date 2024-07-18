@@ -77,19 +77,19 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    async () => {
-      if (isInside) {
-        const { data, error } = await supabase
-          .from("punch_time")
-          .insert([{ name: "Sam", location: "DSG Signs Graphics" }]);
-
-        console.log(data);
-        console.log("hello you");
-      } else {
-        console.log("who are you");
-      }
-    };
+    if (isInside) {
+      console.log("yesssssss");
+      PunchTime();
+    } else {
+      console.log("nononononoo");
+    }
   }, [isInside]);
+
+  const PunchTime = async () => {
+    await supabase
+      .from("punch_time")
+      .insert([{ name: "Tom", location: "DSG Signs Graphics" }]);
+  };
 
   // useEffect(() => {
   //   const fetchData = async () => {
@@ -99,6 +99,7 @@ export default function App() {
   //     // Check if the user is inside any of the geofenced regions
   //     checkIfInsideGeofence(location, locations);
 
+  //     console.log(isInside);
   //     if (isInside) {
   //       async () => {
   //         const { data, error } = await supabase
@@ -108,6 +109,8 @@ export default function App() {
   //         console.log(data);
   //         console.log("hello you");
   //       };
+  //     } else {
+  //       console.log("nope");
   //     }
   //   };
 
@@ -154,7 +157,7 @@ export default function App() {
           isInside ? "bg-green-600" : "bg-red-600"
         } h-full flex justify-center pt-8 items-center`}
       >
-        <Text className="text-3xl text-white font-medium">
+        <Text className="text-2xl text-white font-medium">
           {isInside ? "You are in the zone" : "You are not in the zone"}
         </Text>
       </View>
