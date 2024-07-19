@@ -129,7 +129,7 @@ export default function Auth() {
           isInside ? "bg-blue-600" : "bg-red-600"
         } h-full flex justify-center pt-8 items-center`}
       >
-        <Text className="text-2xl text-white">
+        <Text className="text-2xl font-medium text-white">
           {isInside ? "You are in the zone" : "You are not in the zone"}
         </Text>
       </View>
