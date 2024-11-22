@@ -8,6 +8,7 @@ function App() {
         <p className="bg-neutral-800 p-2">Watch</p>
         <Link text="FMHY" href="https://rentry.org/Piracy-BG" />
         <Link text="RuTracker" href="https://rutracker.org/forum/index.php" />
+        <Link text="Steamrip" href="https://steamrip.com/" />
         <Link text="Anime" href="https://hianime.to/home" />
         <Link text="Manga" href="https://mangareader.to/home" />
         <Link text="Asian" href="https://asianc.sh/" />
