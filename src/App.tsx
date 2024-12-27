@@ -1,11 +1,21 @@
 import "./App.css";
+import { Category } from "./components/Category";
 import { Link } from "./components/Link";
+import { Data } from "./data/data";
 
 function App() {
   return (
     <>
       <div className="flex flex-col max-w-xl mx-auto py-10 gap-3">
-        <p className="bg-neutral-800 p-2">Watch</p>
+        {Data.map((item) => (
+          <Category key={item.title} text={item.title}>
+            {item.content.map((child) => (
+              <Link key={child.text} text={child.text} href={child.link} />
+            ))}
+          </Category>
+        ))}
+
+        {/* <p className="bg-neutral-800 p-2">Watch</p>
         <Link text="FMHY" href="https://rentry.org/Piracy-BG" />
         <Link text="RuTracker" href="https://rutracker.org/forum/index.php" />
         <Link text="Steamrip" href="https://steamrip.com/" />
@@ -25,7 +35,7 @@ function App() {
         <Link
           text="Two"
           href="https://91porn.com/view_video.php?viewkey=2995442c58b8525ed5f4&page=15&c=me3oe&viewtype=basic&category=mf"
-        />
+        /> */}
       </div>
     </>
   );
